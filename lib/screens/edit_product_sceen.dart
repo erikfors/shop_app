@@ -99,20 +99,16 @@ class _EditAddProductScreenState extends State<EditAddProductScreen> {
             ],
           ),
         );
-      } finally {
-        Navigator.of(context).pop();
-        setState(() {
-          _isLoading = false;
-        });
       }
     } else {
-      Provider.of<ProductsProvider>(context, listen: false)
+      await Provider.of<ProductsProvider>(context, listen: false)
           .editProduct(_editedProduct.id, _editedProduct);
-      setState(() {
-        _isLoading = false;
-      });
-      Navigator.of(context).pop();
     }
+
+    setState(() {
+      _isLoading = false;
+    });
+    Navigator.of(context).pop();
   }
 
   @override
