@@ -3,13 +3,14 @@ import 'package:provider/provider.dart';
 
 import '../widgets/cart_item.dart';
 import '../providers/cart_provider.dart';
-import '../providers/orders.dart';
+import '../widgets/order_button.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = "/cart-screen";
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Your Cart"),
@@ -43,18 +44,7 @@ class CartScreen extends StatelessWidget {
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Provider.of<Orders>(context, listen: false).addOrder(
-                        cart.items.values.toList(),
-                        cart.totalAmount,
-                      );
-                      cart.clear();
-                    },
-                    child: Text(
-                      "ORDER NOW",
-                    ),
-                  ),
+                  OrderButton(cart: cart),
                 ],
               ),
             ),

@@ -23,10 +23,14 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
   var _isInit = false;
   var _isLoading = false;
 
+  Future<void> _refreshProduct() async {
+    await Provider.of<ProductsProvider>(context, listen: false)
+        .fetchAndSetProducts();
+  }
+
   @override
   void initState() {
     // Provider.of<ProductsProvider>(context).fetchAndSetProducts();
-    // TODO: implement initState
     super.initState();
   }
 
@@ -42,7 +46,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
           .then((_) => _isLoading = false);
       _isInit = true;
     }
-    // TODO: implement didChangeDependencies
+
     super.didChangeDependencies();
   }
 
@@ -102,7 +106,10 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : ProductsGrid(_showOnlyFavorites),
+          : RefreshIndicator(
+              child: ProductsGrid(_showOnlyFavorites),
+              onRefresh: _refreshProduct,
+            ),
     );
   }
 }
