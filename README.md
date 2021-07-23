@@ -1,16 +1,29 @@
-# shop_app
+# Shop App
 
-A new Flutter project.
+An app where you can have your favorite receipes, and you can access the receips.
 
-## Getting Started
+## Info
 
-This project is a starting point for a Flutter application.
+This project is build with flutter...
 
-A few resources to get you started if this is your first Flutter project:
+In this project you are able to create different products so other people can purshase the item.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- You can see all products created by all users.
+- You can select a product and see a more detail view of it.
+- You can set a product as favorite
+- You can filter products that are your favorites
+- You can add items to your cart
+- You can see the items in the cart
+- You can make an order
+- You can see all of your orders
+- You can see the details of your orders
+- You can create , manage, and delete your own products
+- You can authentificate and all of your data is store on a server
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='app_walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/). 
